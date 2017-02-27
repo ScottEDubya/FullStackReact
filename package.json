@@ -1,0 +1,19 @@
+{
+  "name": "swkj",
+  "version": "0.0.1",
+  "description": "Full stack web application built on Node.js",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sew62/swkj.git"
+  },
+  "author": "Scott Williams, Kevin Jedreski",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/sew62/swkj/issues"
+  },
+  "homepage": "https://github.com/sew62/swkj#readme"
+}
