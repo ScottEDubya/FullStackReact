@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/sew62/swkj/issues"
   },
-  "homepage": "https://github.com/sew62/swkj#readme"
+  "homepage": "https://github.com/sew62/swkj#readme",
+  "dependencies": {
+    "express": "^4.15.2"
+  }
 }
