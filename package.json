@@ -3,9 +3,17 @@
   "version": "0.0.1",
   "description": "Full stack web application built on Node.js",
   "main": "server.js",
+  "pre-commit": [
+      "beautify:client",
+      "beautify:server",
+      "finished"
+  ],
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "server": "nodemon ./server/server"
+    "server": "nodemon ./server/server",
+    "beautify:client": "js-beautify -r client/js/main.js",
+    "beautify:server": "js-beautify -r server/server.js",
+    "finished": "echo Finished with pre-commit steps."
   },
   "repository": {
     "type": "git",
@@ -19,5 +27,9 @@
   "homepage": "https://github.com/sew62/swkj#readme",
   "dependencies": {
     "express": "^4.15.2"
+  },
+  "devDependencies": {
+    "js-beautify": "^1.6.14",
+    "pre-commit": "^1.2.2"
   }
 }
