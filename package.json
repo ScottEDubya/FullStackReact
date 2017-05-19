@@ -13,7 +13,7 @@
     "server": "nodemon ./server/server",
     "beautify:client": "js-beautify -r client/js/main.js",
     "beautify:server": "js-beautify -r server/server.js",
-    "finished": "echo \n\nFinished with pre-commit steps. If the beautifier changed any files, re-add them and commit again.\n\n"
+    "finished": "echo Finished with pre-commit steps. If the beautifier changed any files, re-add them and commit again."
   },
   "repository": {
     "type": "git",
