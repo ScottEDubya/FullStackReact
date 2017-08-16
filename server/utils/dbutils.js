@@ -1,11 +1,15 @@
-let assert = require('assert');
+const assert = require('assert');
 
-var insertDocuments = function insertDocuments(db, callback) {
+/**
+* Inserts an array of documents into the collection
+* @param {object} db the database instance
+* @param {object} data the array to insert
+* @param {function} callback the callback method to be invoked
+*/
+var insertDocuments = function insertDocuments(db, data, callback) {
     let collection = db.collection('documents');
     //insert some documents
-    collection.insertMany([
-        {a : 1}, {a : 2}, {a : 3}
-    ], function(err, result) {
+    collection.insertMany(data, (err, result) => {
         assert.equal(err, null);
         assert.equal(3, result.result.n);
         assert.equal(3, result.ops.length);
@@ -14,10 +18,33 @@ var insertDocuments = function insertDocuments(db, callback) {
     });  
 };
 
-var updateDocument = function updateDocument(db, callback) {
+/**
+* Inserts a document into the collection
+* @param {object} db the database instance
+* @param {object} the document to insert
+* @param {function} callback the callback method to be invoked
+*/
+var insertDocument = function insertDocument(db, data, callback) {
+    let collection = db.collection('documents');
+    //insert some documents
+    collection.insertOne(data, (err, result) => {
+        assert.equal(err, null);
+        console.log('Inserted a document into the document collection');
+        callback(result);
+    });  
+};
+
+/**
+* Updates a specified value in the collection
+* @param {object} db the database instance
+* @param {object} updateObj the object to replace
+* @param {object} newObjthe object to insert
+* @param {function} callback the callback method to be invoked
+*/
+var updateDocument = function updateDocument(db, updateObj, newObj, callback) {
     let collection = db.collection('documents');
     //update document where a is 2, set b equal to 1
-    collection.updateOne({a : 2}, { $set: {b : 1} }, function(err, result) {
+    collection.updateOne(updateObj, { $set: newObj }, (err, result) => {
         assert.equal(err, null);
         assert.equal(1, result.result.n);
         console.log("Updated Document");
@@ -25,10 +52,16 @@ var updateDocument = function updateDocument(db, callback) {
     });
 };
 
-var deleteDocument = function deleteDocument(db, callback) {
+/**
+* Deletes a document from the collection
+* @param {object} db the database instance
+* @param {object} data the entry to delete
+* @param {function} callback the callback method to be invoked
+*/
+var deleteDocument = function deleteDocument(db, data, callback) {
     let collection = db.collection('documents');
     //delete matching document
-    collection.deleteOne({a : 3}, function(err, result) {
+    collection.deleteOne(data, (err, result) => {
         assert.equal(err, null);
         assert.equal(1, result.result.n);
         console.log("Removed Document");
@@ -36,19 +69,24 @@ var deleteDocument = function deleteDocument(db, callback) {
     });
 };
 
+/**
+* Grabs all documents from the collection
+* @param {object} db the database instance
+* @param {function} callback the callback method to be invoked
+*/
 var findDocuments = function findDocuments(db, callback) {
     let collection = db.collection('documents');
-    collection.find({}).toArray(function(err, docs) {
+    collection.find({}).toArray( (err, docs) => {
         assert.equal(err, null);
-        assert.equal(2, docs.length);
-        console.log("Found the following records: ");
-        console.dir(docs);
+//        console.log("Found the following records: ");
+//        console.dir(docs);
         callback(docs);
     });
 };
 
 module.exports = {
     insertDocuments: insertDocuments,
+    insertDocument: insertDocument,
     updateDocument: updateDocument,
     deleteDocument: deleteDocument,
     findDocuments: findDocuments

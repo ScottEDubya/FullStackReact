@@ -1,11 +1,15 @@
 # swkj
 Full stack web application -- presented by Scott Williams and Kevin Jedreski
 
+## Prerequisites: ##
+   install and configure mongodb on your local machine and make a data/ directory inside the project. <br/>
+   Follow the next two steps to run the app's full environment
+### To run mongo db and have it set up to work with the examples: ###
+  npm run dbserver
 ### To run the server and have it restart whenever a file changes: ###
   npm run server
-### To run mongo db and have it set up to work with the examples: ###
-  mkdir data <br>
-  mongod --dbpath=./data --port 27017
+### To run command line queries against this project's active db: ###
+  npm run dbcli
 ### To beautify client side javascript: ###
   npm run beautify:client
 ### To beautify server side javascript: ###

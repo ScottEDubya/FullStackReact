@@ -10,6 +10,8 @@
   ],
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
+    "dbserver": "mongod --dbpath=./data --port 27017",
+    "dbcli": "mongo scottsdb",
     "server": "nodemon ./server/server",
     "beautify:client": "js-beautify -r client/js/main.js",
     "beautify:server": "js-beautify -r server/server.js",
@@ -26,6 +28,7 @@
   },
   "homepage": "https://github.com/sew62/swkj#readme",
   "dependencies": {
+    "body-parser": "^1.17.2",
     "express": "^4.15.2",
     "mongodb": "^2.2.31"
   },
