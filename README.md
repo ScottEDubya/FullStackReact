@@ -1,5 +1,5 @@
-# swkj
-Full stack web application -- presented by Scott Williams and Kevin Jedreski
+# FullStackReact
+Full stack web application -- Scott Williams x Craig Rabara
 
 ## Prerequisites: ##
    install and configure mongodb on your local machine and make a data/ directory inside the project. <br/>
