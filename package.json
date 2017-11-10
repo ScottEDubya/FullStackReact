@@ -1,5 +1,5 @@
 {
-  "name": "swkj",
+  "name": "FullStackReact",
   "version": "0.0.1",
   "description": "Full stack web application built on Node.js",
   "main": "server.js",
@@ -19,14 +19,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/sew62/swkj.git"
+    "url": "git+https://github.com/sew62/FullStackReact.git"
   },
-  "author": "Scott Williams, Kevin Jedreski",
+  "author": "Scott Williams, Craig Rabara",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/sew62/swkj/issues"
+    "url": "https://github.com/sew62/FullStackReact/issues"
   },
-  "homepage": "https://github.com/sew62/swkj#readme",
+  "homepage": "https://github.com/sew62/FullStackReact#readme",
   "dependencies": {
     "body-parser": "^1.17.2",
     "express": "^4.15.2",
