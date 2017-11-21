@@ -16,3 +16,7 @@
 #dropdown:hover .dropdown-content {
     display: block;
 }
+
+nav button {
+    max-width: 130px;
+}
