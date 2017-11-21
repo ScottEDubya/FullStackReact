@@ -1,3 +1,4 @@
 /node_modules/
 data/*
+!data/ignoreme.txt
 **/.DS_Store
